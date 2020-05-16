@@ -1,0 +1,17 @@
+@import "../../../../assets/scss/consts";
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+
+  & > span {
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  .icon {
+    color: $RED;
+  }
+}
