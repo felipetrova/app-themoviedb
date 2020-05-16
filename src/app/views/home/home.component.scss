@@ -1,0 +1,22 @@
+.home {
+
+  .title {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .lanc-card {
+    width: 100%;
+
+    img {
+      object-fit: cover;
+      width: 320px;
+      height: 180px;
+    }
+  }
+}

@@ -1,3 +1,5 @@
+@import "../../../../assets/scss/consts";
+
 .header {
   display: flex;
   align-items: center;
@@ -7,6 +9,7 @@
     display: flex;
     align-items: center;
     text-decoration: none;
+    color: $BLUE;
   }
 
   .logo {

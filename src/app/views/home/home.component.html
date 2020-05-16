@@ -1,0 +1,35 @@
+<mat-card class="home mat-elevation-z3">
+  <mat-card-title class="title">
+    Bem vindo
+  </mat-card-title>
+
+  <mat-card-subtitle class="subtitle">
+    Consulte os maiores e mais recentes filmes do cinema.
+  </mat-card-subtitle>
+
+  <mat-grid-list
+    cols="2"
+    gutterSize="15"
+  >
+    <mat-grid-tile *ngFor="let lanc of lancamentos">
+      <mat-card
+        class="lanc-card"
+      >
+        <mat-card-header>
+          <mat-card-title>
+            {{ lanc.title }}
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://image.tmdb.org/t/p/w500{{ lanc.poster_path }}" alt="Poster do Filme: {{ lanc.title }}">
+        <mat-card-content>
+          <p>
+            {{ lanc.overview }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+</mat-card>
+
