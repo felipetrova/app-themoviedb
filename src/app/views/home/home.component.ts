@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Lancamento } from './home.model';
-import { LancamentoService } from './home.service';
+import { Filmes } from 'src/app/app.model';
+import { FilmesService } from 'src/app/app.service';
 
 @Component({
   selector: 'app-home',
@@ -10,14 +10,16 @@ import { LancamentoService } from './home.service';
 })
 export class HomeComponent implements OnInit {
 
-  lancamentos: Lancamento[]
+  lancamentos: Filmes[]
+  showLoading: boolean = true
 
-  constructor(private lancamentoService: LancamentoService) { }
+  constructor(private filmesService: FilmesService) { }
 
   ngOnInit(): void {
-    this.lancamentoService.listLancamento().subscribe(lancamentos => {
+    this.filmesService.listLancamento().subscribe(lancamentos => {
       console.log(lancamentos);
       this.lancamentos = lancamentos.results;
+      this.showLoading = false;
     })
   }
 
