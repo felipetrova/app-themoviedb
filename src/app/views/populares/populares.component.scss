@@ -9,4 +9,16 @@
   .subtitle {
     font-size: 1rem;
   }
+
+  .section {
+    height :800px;
+
+    .content {
+      min-width: 300px;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
 }

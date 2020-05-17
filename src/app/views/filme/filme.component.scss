@@ -11,6 +11,11 @@
     margin: 0 0 1rem;
   }
 
+  i {
+    margin-right: 0.25rem;
+    font-size: 1rem;
+  }
+
   mat-card-content {
 
     h2 {
@@ -41,6 +46,25 @@
 
     mat-card-content {
       padding-left: 1rem;
+
+      .details {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+
+        p {
+          font-size: 0.8rem;
+
+          strong {
+            font-size: 1rem;
+          }
+        }
+
+        strong {
+          display: flex;
+          align-items: center;
+        }
+      }
     }
   }
 }

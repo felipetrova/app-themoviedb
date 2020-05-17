@@ -11,12 +11,55 @@
     </h2>
 
     <p>
-      <strong>Resume</strong>
+      <strong>Tagline</strong>
       {{ movie.tagline }}.
     </p>
     <p>
       <strong>Overview</strong>
       {{ movie.overview }}
     </p>
+
+    <div class="details">
+      <p>
+        <strong>
+          <i class="material-icons">
+            tv
+          </i> Status:
+        </strong>
+        {{ movie.status }} ({{ movie.release_date }})
+      </p>
+      <p>
+        <strong>
+          <i class="material-icons">
+            attach_money
+          </i> Budget:
+        </strong>
+        {{ movie.budget | currency }}
+      </p>
+      <p>
+        <strong>
+          <i class="material-icons">
+            attach_money
+          </i> Revenue:
+        </strong>
+        {{ movie.revenue | currency }}
+      </p>
+      <p>
+        <strong>
+          <i class="material-icons">
+            trending_up
+          </i> Vote average:
+        </strong>
+        {{ movie.vote_average }} / 10
+      </p>
+      <p>
+        <strong>
+          <i class="material-icons">
+            trending_up
+          </i> Vote count:
+        </strong>
+        {{ movie.vote_count }}
+      </p>
+    </div>
   </mat-card-content>
 </mat-card>

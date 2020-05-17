@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
 
 import { Filme } from 'src/app/app.model';
 import { FilmesService } from 'src/app/app.service';
@@ -11,10 +12,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FilmeComponent implements OnInit {
 
+  title = '';
   movie: Filme
   showLoading: boolean = true
 
   constructor(
+    private titleService: Title,
+    private metaService: Meta,
     private filmesService: FilmesService,
     private route: ActivatedRoute
   ) { }
@@ -24,7 +28,16 @@ export class FilmeComponent implements OnInit {
     this.filmesService.getMovie(idFilme).subscribe(movie => {
       this.movie = movie;
       this.showLoading = false;
+
+      // Add meta tags SEO
+      this.titleService.setTitle(movie.title + ' - The Movie Database (TMDb)');
+      this.metaService.addTags([
+        {name: 'keywords', content: 'Movies, TV Shows, Streaming, Reviews, API, Actors, Actresses, Photos, User Ratings, Synopsis, Trailers, Teasers, Credits, Cast'},
+        {name: 'description', content: movie.overview},
+        {name: 'robots', content: 'index, follow'}
+      ]);
     })
+
   }
 
 }

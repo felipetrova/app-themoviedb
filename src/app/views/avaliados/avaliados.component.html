@@ -1,4 +1,4 @@
-<mat-card class="home mat-elevation-z3">
+<mat-card class="avaliados mat-elevation-z3">
   <mat-card-title class="title">
     Filmes Melhores Avaliados
   </mat-card-title>
@@ -17,19 +17,21 @@
       </div>
 
       <div fxFlex="33" *ngFor="let aval of avaliados">
-        <mat-card class="lanc-card">
-          <mat-card-header>
-            <mat-card-title>
-              {{ aval.title }}
-            </mat-card-title>
-          </mat-card-header>
-          <img mat-card-image src="https://image.tmdb.org/t/p/w500{{ aval.poster_path }}" alt="Poster do Filme: {{ aval.title }}">
-          <mat-card-content>
-            <p>
-              {{ aval.overview }}
-            </p>
-          </mat-card-content>
-        </mat-card>
+        <a routerLink="/movie/{{ aval.id }}">
+          <mat-card class="lanc-card">
+            <mat-card-header>
+              <mat-card-title>
+                {{ aval.title }}
+              </mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="https://image.tmdb.org/t/p/w500{{ aval.poster_path }}" alt="Poster do Filme: {{ aval.title }}">
+            <mat-card-content>
+              <p>
+                {{ aval.overview }}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </a>
       </div>
 
     </div>

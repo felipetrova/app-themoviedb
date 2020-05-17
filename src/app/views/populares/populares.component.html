@@ -1,4 +1,4 @@
-<mat-card class="home mat-elevation-z3">
+<mat-card class="populares mat-elevation-z3">
   <mat-card-title class="title">
     Filmes Mais Populares
   </mat-card-title>
@@ -17,19 +17,21 @@
       </div>
 
       <div fxFlex="33" *ngFor="let pop of populares">
-        <mat-card class="lanc-card">
-          <mat-card-header>
-            <mat-card-title>
-              {{ pop.title }}
-            </mat-card-title>
-          </mat-card-header>
-          <img mat-card-image src="https://image.tmdb.org/t/p/w500{{ pop.poster_path }}" alt="Poster do Filme: {{ pop.title }}">
-          <mat-card-content>
-            <p>
-              {{ pop.overview }}
-            </p>
-          </mat-card-content>
-        </mat-card>
+        <a routerLink="/movie/{{ pop.id }}">
+          <mat-card class="lanc-card">
+            <mat-card-header>
+              <mat-card-title>
+                {{ pop.title }}
+              </mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="https://image.tmdb.org/t/p/w500{{ pop.poster_path }}" alt="Poster do Filme: {{ pop.title }}">
+            <mat-card-content>
+              <p>
+                {{ pop.overview }}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </a>
       </div>
 
     </div>
