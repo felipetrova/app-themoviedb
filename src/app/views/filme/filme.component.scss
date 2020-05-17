@@ -1,0 +1,46 @@
+.movie {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 0 1rem;
+  }
+
+  mat-card-content {
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+
+      strong {
+        font-weight: bold;
+        font-size: 1.2rem;
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: auto 1fr;
+
+    img {
+      margin-bottom: 0;
+    }
+
+    mat-card-content {
+      padding-left: 1rem;
+    }
+  }
+}

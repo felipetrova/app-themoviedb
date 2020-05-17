@@ -1,0 +1,22 @@
+<mat-card class="movie mat-elevation-z3">
+  <mat-progress-spinner
+    mode="indeterminate"
+    *ngIf="showLoading === true"
+  ></mat-progress-spinner>
+
+  <img mat-card-image src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="Poster do Filme: {{ movie.title }}">
+  <mat-card-content>
+    <h2>
+      {{ movie.title }}
+    </h2>
+
+    <p>
+      <strong>Resume</strong>
+      {{ movie.tagline }}.
+    </p>
+    <p>
+      <strong>Overview</strong>
+      {{ movie.overview }}
+    </p>
+  </mat-card-content>
+</mat-card>
