@@ -21,9 +21,9 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 
 import { HomeComponent } from './views/home/home.component';
-// import { LancamentosComponent } from './views/lancamentos/lancamentos.component';
 import { PopularesComponent } from './views/populares/populares.component';
 import { AvaliadosComponent } from './views/avaliados/avaliados.component';
+import { FilmeComponent } from './views/filme/filme.component';
 
 @NgModule({
   declarations: [
@@ -32,9 +32,9 @@ import { AvaliadosComponent } from './views/avaliados/avaliados.component';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    // LancamentosComponent,
     PopularesComponent,
-    AvaliadosComponent
+    AvaliadosComponent,
+    FilmeComponent
   ],
   imports: [
     BrowserModule,

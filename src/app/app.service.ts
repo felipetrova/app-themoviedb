@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
-import { Filmes } from './app.model';
+import { Filmes, Filme } from './app.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -27,5 +27,10 @@ export class FilmesService {
 
   listAvaliados(): Observable<Filmes[]> {
     return this.http.get<Filmes[]>(this.baseUrl + 'top_rated?api_key=' + this.api_key + '&language=en-US&page=' + this.page);
+  }
+
+  getMovie(idFilme: string): Observable<Filme> {
+    // const urlFilme = `${this.baseUrl}`
+    return this.http.get<Filme>(this.baseUrl + idFilme + '?api_key=' + this.api_key + '&language=en-US')
   }
 }
