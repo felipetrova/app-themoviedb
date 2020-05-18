@@ -16,18 +16,18 @@
         ></mat-progress-spinner>
       </div>
 
-      <div fxFlex="33" *ngFor="let lanc of lancamentos">
-        <a routerLink="movie/{{ lanc.id }}">
+      <div fxFlex="33" *ngFor="let res of results">
+        <a routerLink="movie/{{ res.id }}">
           <mat-card class="lanc-card">
             <mat-card-header>
               <mat-card-title>
-                {{ lanc.title }}
+                {{ res.title }}
               </mat-card-title>
             </mat-card-header>
-            <img mat-card-image src="https://image.tmdb.org/t/p/w500{{ lanc.poster_path }}" alt="Poster do Filme: {{ lanc.title }}">
+            <img mat-card-image src="https://image.tmdb.org/t/p/w500{{ res.poster_path }}" alt="Poster do Filme: {{ res.title }}">
             <mat-card-content>
               <p>
-                {{ lanc.overview }}
+                {{ res.overview }}
               </p>
             </mat-card-content>
           </mat-card>

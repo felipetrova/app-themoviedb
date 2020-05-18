@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
-import { Filmes, Filme } from './app.model';
+import { ListMovies, Movie } from './app.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -17,20 +17,19 @@ export class FilmesService {
     private http: HttpClient
   ) { }
 
-  listLancamento(): Observable<Filmes[]> {
-    return this.http.get<Filmes[]>(this.baseUrl + 'upcoming?api_key=' + this.api_key + '&language=en-US&page=' + this.page);
+  listLancamento(): Observable<ListMovies[]> {
+    return this.http.get<ListMovies[]>(this.baseUrl + 'upcoming?api_key=' + this.api_key + '&language=en-US&page=' + this.page);
   }
 
-  listPopulares(): Observable<Filmes[]> {
-    return this.http.get<Filmes[]>(this.baseUrl + 'popular?api_key=' + this.api_key + '&language=en-US&page=' + this.page);
+  listPopulares(): Observable<ListMovies[]> {
+    return this.http.get<ListMovies[]>(this.baseUrl + 'popular?api_key=' + this.api_key + '&language=en-US&page=' + this.page);
   }
 
-  listAvaliados(): Observable<Filmes[]> {
-    return this.http.get<Filmes[]>(this.baseUrl + 'top_rated?api_key=' + this.api_key + '&language=en-US&page=' + this.page);
+  listAvaliados(): Observable<ListMovies[]> {
+    return this.http.get<ListMovies[]>(this.baseUrl + 'top_rated?api_key=' + this.api_key + '&language=en-US&page=' + this.page);
   }
 
-  getMovie(idFilme: string): Observable<Filme> {
-    // const urlFilme = `${this.baseUrl}`
-    return this.http.get<Filme>(this.baseUrl + idFilme + '?api_key=' + this.api_key + '&language=en-US')
+  getMovie(idFilme: string): Observable<Movie> {
+    return this.http.get<Movie>(this.baseUrl + idFilme + '?api_key=' + this.api_key + '&language=en-US')
   }
 }

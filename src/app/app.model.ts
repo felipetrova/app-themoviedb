@@ -1,4 +1,4 @@
-export interface Filmes {
+export interface ListMovies {
   id: number
   popularity: number
   vote_count: number
@@ -8,7 +8,7 @@ export interface Filmes {
   overview: string
 }
 
-export interface Filme {
+export interface Movie {
   id: number
   backdrop_path: string
   budget: number

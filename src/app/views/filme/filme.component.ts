@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 
-import { Filme } from 'src/app/app.model';
+import { Movie } from 'src/app/app.model';
 import { FilmesService } from 'src/app/app.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class FilmeComponent implements OnInit {
 
   title = '';
-  movie: Filme
+  movie: Movie
   showLoading: boolean = true
 
   constructor(

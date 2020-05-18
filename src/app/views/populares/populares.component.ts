@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 
-import { Filmes } from 'src/app/app.model';
+import { ListMovies } from 'src/app/app.model';
 import { FilmesService } from 'src/app/app.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { FilmesService } from 'src/app/app.service';
 export class PopularesComponent implements OnInit {
 
   title = 'Popular - The Movie Database (TMDb)';
-  populares: Filmes[]
+  results: ListMovies[]
   showLoading: boolean = true
 
   constructor(
@@ -22,15 +22,15 @@ export class PopularesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.filmesService.listPopulares().subscribe(populares => {
-      this.populares = populares.results;
+    this.filmesService.listPopulares().subscribe(results => {
+      this.results = results['results'];
       this.showLoading = false;
 
       // Add meta tags SEO
       this.titleService.setTitle(this.title);
       this.metaService.addTags([
         {name: 'keywords', content: 'Movies, TV Shows, Streaming, Reviews, API, Actors, Actresses, Photos, User Ratings, Synopsis, Trailers, Teasers, Credits, Cast'},
-        {name: 'description', content: populares.overview},
+        {name: 'description', content: this.results['overview']},
         {name: 'robots', content: 'index, follow'}
       ]);
     })

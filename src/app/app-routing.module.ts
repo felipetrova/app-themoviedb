@@ -12,11 +12,11 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: "populares",
+    path: "popular",
     component: PopularesComponent
   },
   {
-    path: "avaliados",
+    path: "top-rated",
     component: AvaliadosComponent
   },
   {
