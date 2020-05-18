@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.filmesService.listLancamento().subscribe(results => {
+      console.log(results);
       this.results = results['results'];
       this.showLoading = false;
 

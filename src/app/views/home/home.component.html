@@ -1,36 +1,33 @@
 <mat-card class="home mat-elevation-z3">
   <mat-card-title class="title">
-    Bem vindo
+    Welcome
   </mat-card-title>
 
   <mat-card-subtitle class="subtitle">
-    Consulte os maiores e mais recentes filmes do cinema.
+    See the biggest and latest cinema films.
   </mat-card-subtitle>
 
-  <div class="section">
-    <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill>
-      <div fxFlex="100">
-        <mat-progress-spinner
-          mode="indeterminate"
-          *ngIf="showLoading === true"
-        ></mat-progress-spinner>
-      </div>
+  <div>
+    <mat-progress-spinner
+      mode="indeterminate"
+      *ngIf="showLoading === true"
+    ></mat-progress-spinner>
+  </div>
 
-      <div fxFlex="33" *ngFor="let res of results">
+  <div class="section">
+    <div class="container">
+
+      <div class="card" *ngFor="let res of results">
         <a routerLink="movie/{{ res.id }}">
-          <mat-card class="lanc-card">
-            <mat-card-header>
-              <mat-card-title>
-                {{ res.title }}
-              </mat-card-title>
-            </mat-card-header>
-            <img mat-card-image src="https://image.tmdb.org/t/p/w500{{ res.poster_path }}" alt="Poster do Filme: {{ res.title }}">
-            <mat-card-content>
-              <p>
-                {{ res.overview }}
-              </p>
-            </mat-card-content>
-          </mat-card>
+          <h2>
+            {{ res.title }}
+          </h2>
+
+          <img mat-card-image src="https://image.tmdb.org/t/p/w500{{ res.poster_path }}" alt="{{ res.title }}" title="{{ res.title }}">
+
+          <p>
+            {{ res.overview }}
+          </p>
         </a>
       </div>
     </div>
