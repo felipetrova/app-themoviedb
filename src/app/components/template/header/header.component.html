@@ -1,34 +1,40 @@
-<mat-toolbar class="header mat-elevation-z4">
-  <span>
-    <a routerLink="/">
-      <img src="assets/img/logo.svg" alt="App The Movie DB" class="logo">
-    </a>
-  </span>
+<mat-toolbar class="header mat-elevation-z4" role="heading">
+  <div class="container">
+    <div class="logo">
+      <span>
+        <a routerLink="/">
+          <img src="assets/img/logo.svg" alt="App The Movie DB" class="logo">
+        </a>
+      </span>
+    </div>
 
-  <span class="title-group">
-    <a routerLink="/">
-      <i class="material-icons">
-        home
-      </i>
-      Home
-    </a>
-  </span>
+    <nav>
+      <span class="title-group">
+        <a routerLink="/">
+          <i class="material-icons">
+            home
+          </i>
+          Home
+        </a>
+      </span>
 
-  <span class="title-group">
-    <a routerLink="/popular">
-      <i class="material-icons">
-        tv
-      </i>
-      Popular
-    </a>
-  </span>
+      <span class="title-group">
+        <a routerLink="/popular">
+          <i class="material-icons">
+            tv
+          </i>
+          Popular
+        </a>
+      </span>
 
-  <span class="title-group">
-    <a routerLink="/top-rated">
-      <i class="material-icons">
-        movie
-      </i>
-      Top Rated
-    </a>
-  </span>
+      <span class="title-group">
+        <a routerLink="/top-rated">
+          <i class="material-icons">
+            movie
+          </i>
+          Top Rated
+        </a>
+      </span>
+    </nav>
+  </div>
 </mat-toolbar>

@@ -5,3 +5,15 @@
   background: $WHITE;
   color: $MEDIUM_GREY;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  @media (min-width: 768px) {
+    display: grid;
+    // grid-template-columns: 1fr 1fr;
+    // grid-template-rows: auto 1fr;
+  }
+}

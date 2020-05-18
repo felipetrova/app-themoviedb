@@ -11,9 +11,20 @@
     </h2>
 
     <p>
+      <small *ngFor="let item of movie.genres">
+        {{ item.name }},&nbsp;
+      </small>
+
+      <small>
+        {{ movie.runtime }} min.
+      </small>
+    </p>
+
+    <p>
       <strong>Tagline</strong>
       {{ movie.tagline }}.
     </p>
+
     <p>
       <strong>Overview</strong>
       {{ movie.overview }}
@@ -26,7 +37,7 @@
             tv
           </i> Status:
         </strong>
-        {{ movie.status }} ({{ movie.release_date }})
+        {{ movie.status }} ({{ movie.release_date | date }})
       </p>
       <p>
         <strong>

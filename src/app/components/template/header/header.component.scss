@@ -1,26 +1,77 @@
 @import "../../../../assets/scss/consts";
 
 .header {
+  background: $BLUE;
   display: flex;
   align-items: center;
-  padding: 5px;
+  grid-column: span 2;
+  padding: 10px;
 
   a {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: $BLUE;
+    color: $WHITE;
   }
 
-  .logo {
-    min-width: 250px;
+  .container {
+    min-height: 80px;
+    width: 100%;
+
+    .logo {
+      min-width: 250px;
+      position: relative;
+      left: 0;
+      text-align: center;
+    }
+
+    nav {
+
+      .title-group {
+        padding-left: 25px;
+
+        i {
+          padding-right: 5px;
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      grid-template-rows: 80px;
+      min-height: 80px;
+      align-items: center;
+      justify-items: flex-start;
+
+      nav {
+        margin-left: 3rem;
+
+        a {
+          display: inline-flex;
+        }
+      }
+    }
   }
 
-  .title-group {
-    padding-left: 25px;
+  @media (max-width: 768px) {
+    height: 250px;
 
-    i {
-      padding-right: 5px;
+    .container {
+
+      .logo {
+        margin-bottom: 1rem;
+      }
+
+      nav {
+
+        .title-group {
+          font-size: 1rem;
+          padding-left: 0;
+          margin-bottom: 0.5rem;
+          display: block;
+        }
+      }
     }
   }
 }
